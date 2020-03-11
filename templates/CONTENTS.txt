@@ -1,0 +1,14 @@
+Base.html:- 
+contains the instagram, facebook and twitter links
+contains the copyright files
+
+
+Base2.html:-
+same as above
+
+does not contain or does not work
+edit.html
+detail.html
+index.html
+list.html
+

@@ -1,0 +1,138 @@
+{% extends "base2.html" %}
+
+{% block extra_style %}
+    .header {
+        background: url("{{ url_for('static', filename='images/events.jpg')}}");
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+{% endblock %}
+{% block content %}
+    <div class="blog py-4">
+        <h3 class="section-title text-center m-5">Talks</h3>
+        <div class="container">
+            <div class="py-4">
+                <div class="row">
+                    <div class="card-deck">
+
+                        {% for entry in object_list %}
+                        {% if entry.category == "Talk" and entry.published %}
+                        <div class="text-center col-md-12 col-lg-3">
+                            <a href="{{ url_for('detail', slug=entry.slug) }}">
+                                <div class="custom-card card mb-4">
+                                    <img class="card-img" src="/{{ entry.image }}" alt="{{ entry.title }}">
+                                </div>
+                                <h5>{{ entry.title }}</h5>
+                            </a>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog py-4">
+        <h3 class="section-title text-center m-5">Workshops</h3>
+        <div class="container">
+            <div class="py-4">
+                <div class="row">
+                    <div class="card-deck">
+
+                            {% for entry in object_list %}
+                            {% if entry.category == "Workshop" and entry.published %}
+                            <div class="text-center col-md-12 col-lg-3">
+                                <a href="{{ url_for('detail', slug=entry.slug) }}">
+                                    <div class="custom-card card mb-4">
+                                        <img class="card-img" src="/{{ entry.image }}" alt="{{ entry.title }}">
+                                    </div>
+                                    <h5>{{ entry.title }}</h5>
+                                </a>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog py-4">
+        <h3 class="section-title text-center m-5">Competitions</h3>
+        <div class="container">
+            <div class="py-4">
+                <div class="row">
+                    <div class="card-deck">
+
+                            {% for entry in object_list %}
+                            {% if entry.category == "Competition" and entry.published %}
+                            <div class="text-center col-md-12 col-lg-3">
+                                    <a href="{{ url_for('detail', slug=entry.slug) }}">
+                                        <div class="custom-card card mb-4">
+                                            <img class="card-img" src="/{{ entry.image }}" alt="{{ entry.title }}">
+                                        </div>
+                                        <h5>{{ entry.title }}</h5>
+                                    </a>
+                                </div>
+                            {% endif %}
+                            {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog py-4">
+            <h3 class="section-title text-center m-5">Exhibition</h3>
+            <div class="container">
+                <div class="py-4">
+                    <div class="row">
+                        <div class="card-deck">
+                                {% for entry in object_list %}
+                                {% if entry.category == "Exhibition" and entry.published %}
+                                <div class="text-center col-md-12 col-lg-3">
+                                        <a href="{{ url_for('detail', slug=entry.slug) }}">
+                                            <div class="custom-card card mb-4">
+                                                <img class="card-img" src="/{{ entry.image }}" alt="{{ entry.title }}">
+                                            </div>
+                                            <h5>{{ entry.title }}</h5>
+                                        </a>
+                                    </div>
+                                {% endif %}
+                                {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="blog py-4">
+        <h3 class="section-title text-center m-5">Games</h3>
+        <div class="container">
+            <div class="py-4">
+                <div class="row">
+                    <div class="card-deck">
+                            {% for entry in object_list %}
+                            {% if entry.category == "Games" and entry.published %}
+                            <div class="text-center col-md-12 col-lg-3">
+                                    <a href="{{ url_for('detail', slug=entry.slug) }}">
+                                        <div class="custom-card card mb-4">
+                                            <img class="card-img" src="/{{ entry.image }}" alt="{{ entry.title }}">
+                                        </div>
+                                        <h5>{{ entry.title }}</h5>
+                                    </a>
+                                </div>
+                            {% endif %}
+                            {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
